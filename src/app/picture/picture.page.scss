@@ -1,0 +1,22 @@
+ion-content{
+    --ion-background-color: var(--ion-color-dark);
+    }
+    
+    .bg-img {
+    height: 100%;
+    width: 100%;
+    //background-image: linear-gradient(rgba(0, 0, 0, 0.7), #222428);
+    //url("../../assets/img/row.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+    .img-header {
+    display: flex;
+    justify-content: center;
+    }
+    .img-header img{
+    margin-top: 100px;    
+    height: 100%;
+    width: 100%;
+    }
+    

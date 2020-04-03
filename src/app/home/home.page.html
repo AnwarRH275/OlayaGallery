@@ -1,20 +1,55 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <!--<ion-title><img class = "logo-header" src="../../assets/img/logo.jpg"></ion-title> -->
+    <ion-item>
+<ion-label>Language</ion-label>
+<ion-select value="brown" ok-text="Okay" cancel-text="Dismiss" (ionChange)="changeLang($event)">
+<ion-select-option *ngFor="let lang of langs" [value]="lang">
+{{ lang }}
+</ion-select-option>
+</ion-select>
+</ion-item>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-segment [(ngModel)]="galleryType" color="primary">
+    <ion-segment-button value="Gallery">
+      {{ 'HELLO' | translate }}
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </ion-segment-button>
+  
+    <ion-segment-button value="Favorite">
+      {{ 'GREETING' | translate }}
+
+    </ion-segment-button>
+    
+  </ion-segment>
+
+  <div [ngSwitch]="galleryType">
+    <!-- Responsive Layout with Ion Grid-->
+    <div class="images" *ngSwitchCase="'Gallery'" >
+      <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,
+      11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,
+      26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
+      41,42,43,44,45,46,47,48,49,50,51,52,53,54,55]">
+        <img src="assets/img/{{image}}.jpg" (click)="openPicture(image)"
+        >
+      </div>
+    </div>
+   
+    <ion-grid *ngSwitchCase="'Favorite'">
+      
+        <div   *ngFor="let idea of (ideas | async)">
+        
+        <img src="assets/img/{{ idea.name }}.jpg" (click)="openDelete(idea)" >
+      
+      </div>
+    </ion-grid>
+ 
+ 
+   
+ 
   </div>
-</ion-content>
+
+ </ion-content>

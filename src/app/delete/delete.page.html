@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-toolbar color="dark">
+  
+  <ion-buttons slot="end">
+  <ion-button color="light" (click)="close()">
+  <ion-icon slot="icon-only" name="close"></ion-icon>
+  </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <a href="assets/img/{{ idea.name }}.jpg" download>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary">
+      <ion-icon name="cloud-download-outline"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+    </a>
+      <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button color="medium" (click)="deleteIdea()" >
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+        </ion-fab>
+
+  <div class="bg-img" >
+  <div class="img-header">
+  <img src="../../assets/img/{{img.name}}.jpg">
+  </div>
+  </div>
+  </ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ionicGallery",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

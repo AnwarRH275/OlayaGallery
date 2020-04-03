@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-toolbar color="dark">
+  
+  <ion-buttons slot="end">
+  <ion-button color="light" (click)="close()">
+  <ion-icon slot="icon-only" name="close"></ion-icon>
+  </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="danger" (click)="addFavorie()">
+      <ion-icon name="heart-outline"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+
+
+  <div class="bg-img" >
+  <div class="img-header">
+  <img src="../../assets/img/{{img}}.jpg">
+  </div>
+  </div>
+  </ion-content>
